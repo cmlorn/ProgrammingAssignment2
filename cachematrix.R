@@ -1,10 +1,10 @@
-## Cache the mean of a matrix and solve for its inverse if no prior cache is found
-## 
+## Set of functions to Cache the mean of a matrix and solve 
+## for its inverse if no prior cache is found
 
-## Creates a list of functions and caches the mean of a matrix
+## Creates a list of functions to set and get the inverse of a matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-  #Clear variables for matrix and inverse caching
+  #Clear prior cached variables
   m <- NULL
   set <- function(y) {
     x <<- y
@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x
   setinverse <- function(solve) m <<- solve
   getinverse <- function() m
-  #create list of functions for matrix solving
+  #create list of functions and environments for matrix solving
   list(set = set, get = get,
        setinverse = setinverse,
        getinverse = getinverse)
